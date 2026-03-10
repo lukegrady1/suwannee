@@ -11,7 +11,7 @@ const accommodations: Accommodation[] = [
   {
     title: 'Rustic Cabins',
     description: 'Tucked among the oaks with modern comforts. Wake up to birdsong and river mist.',
-    image: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=800',
+    image: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=800',
     alt: 'Cozy rustic cabin nestled in the woods',
   },
   {
