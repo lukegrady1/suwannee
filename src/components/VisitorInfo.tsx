@@ -48,16 +48,19 @@ export default function VisitorInfo() {
     <section className="bg-cream py-20 md:py-28 noise-overlay">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Map placeholder */}
-          <motion.div
+          {/* Left: Map link */}
+          <motion.a
+            href="https://www.google.com/maps/place/3076+95th+Dr,+Live+Oak,+FL+32060/@30.3937576,-82.9434663,17.25z"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-forest rounded-lg p-8 md:p-12 min-h-[350px] flex flex-col items-center justify-center"
+            className="bg-forest rounded-lg p-8 md:p-12 min-h-[350px] flex flex-col items-center justify-center group cursor-pointer hover:bg-forest/90 transition-colors"
           >
             {/* Decorative SVG dot map */}
-            <svg viewBox="0 0 200 150" className="w-full max-w-xs opacity-30 mb-6">
+            <svg viewBox="0 0 200 150" className="w-full max-w-xs opacity-30 mb-6 group-hover:opacity-50 transition-opacity">
               <circle cx="40" cy="30" r="3" fill="#8FAF8C" />
               <circle cx="80" cy="50" r="4" fill="#C8922A" />
               <circle cx="120" cy="25" r="2.5" fill="#8FAF8C" />
@@ -73,10 +76,10 @@ export default function VisitorInfo() {
               <path d="M120,25 Q140,55 160,60" stroke="#8FAF8C" strokeWidth="0.5" fill="none" opacity="0.5" />
               <path d="M60,80 Q80,90 100,100" stroke="#8FAF8C" strokeWidth="0.5" fill="none" opacity="0.5" />
             </svg>
-            <span className="font-accent text-cream/60 tracking-[0.2em] text-sm text-center">
+            <span className="font-accent text-cream/60 tracking-[0.2em] text-sm text-center group-hover:text-amber transition-colors">
               PROPERTY MAP &mdash; 800 ACRES
             </span>
-          </motion.div>
+          </motion.a>
 
           {/* Right: Info */}
           <motion.div
