@@ -72,19 +72,22 @@ export default function Hero() {
       {/* Mobile menu */}
       {menuOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed inset-0 bg-bark/95 z-20 flex flex-col items-center justify-center gap-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-bark/95 z-25 flex flex-col items-center justify-center gap-4 px-8"
         >
-          {navLinks.map((link) => (
-            <a
+          {navLinks.map((link, i) => (
+            <motion.a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-cream font-display text-3xl hover:text-amber transition-colors"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              className="w-full max-w-xs text-center bg-forest/40 border border-cream/10 rounded-lg px-6 py-4 text-cream font-display text-2xl hover:bg-forest/60 hover:text-amber transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {link}
-            </a>
+            </motion.a>
           ))}
         </motion.div>
       )}
