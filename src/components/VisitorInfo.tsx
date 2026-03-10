@@ -48,38 +48,25 @@ export default function VisitorInfo() {
     <section className="bg-cream py-20 md:py-28 noise-overlay">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Map link */}
-          <motion.a
-            href="https://www.google.com/maps/place/3076+95th+Dr,+Live+Oak,+FL+32060/@30.3937576,-82.9434663,17.25z"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Left: Embedded Google Map */}
+          <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-forest rounded-lg p-8 md:p-12 min-h-[350px] flex flex-col items-center justify-center group cursor-pointer hover:bg-forest/90 transition-colors"
+            className="rounded-lg overflow-hidden min-h-[350px]"
           >
-            {/* Decorative SVG dot map */}
-            <svg viewBox="0 0 200 150" className="w-full max-w-xs opacity-30 mb-6 group-hover:opacity-50 transition-opacity">
-              <circle cx="40" cy="30" r="3" fill="#8FAF8C" />
-              <circle cx="80" cy="50" r="4" fill="#C8922A" />
-              <circle cx="120" cy="25" r="2.5" fill="#8FAF8C" />
-              <circle cx="160" cy="60" r="3" fill="#8FAF8C" />
-              <circle cx="60" cy="80" r="3.5" fill="#8FAF8C" />
-              <circle cx="100" cy="100" r="5" fill="#C8922A" />
-              <circle cx="140" cy="85" r="2" fill="#8FAF8C" />
-              <circle cx="30" cy="110" r="3" fill="#8FAF8C" />
-              <circle cx="170" cy="120" r="3.5" fill="#8FAF8C" />
-              <circle cx="90" cy="130" r="2.5" fill="#8FAF8C" />
-              <path d="M40,30 Q60,55 80,50" stroke="#8FAF8C" strokeWidth="0.5" fill="none" opacity="0.5" />
-              <path d="M80,50 Q100,75 100,100" stroke="#C8922A" strokeWidth="0.5" fill="none" opacity="0.5" />
-              <path d="M120,25 Q140,55 160,60" stroke="#8FAF8C" strokeWidth="0.5" fill="none" opacity="0.5" />
-              <path d="M60,80 Q80,90 100,100" stroke="#8FAF8C" strokeWidth="0.5" fill="none" opacity="0.5" />
-            </svg>
-            <span className="font-accent text-cream/60 tracking-[0.2em] text-sm text-center group-hover:text-amber transition-colors">
-              PROPERTY MAP &mdash; 800 ACRES
-            </span>
-          </motion.a>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.5!2d-82.9434663!3d30.3937576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88eee1af1534dbb9%3A0x534539d4ea40066f!2s3076%2095th%20Dr%2C%20Live%20Oak%2C%20FL%2032060!5e0!3m2!1sen!2sus!4v1710000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '350px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Spirit of the Suwannee Music Park location"
+            />
+          </motion.div>
 
           {/* Right: Info */}
           <motion.div
