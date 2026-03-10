@@ -76,6 +76,15 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           className="fixed inset-0 bg-bark/95 z-25 flex flex-col items-center justify-center gap-4 px-8"
         >
+          <button
+            className="absolute top-6 right-6 text-cream hover:text-amber transition-colors"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
           {navLinks.map((link, i) => (
             <motion.a
               key={link}
